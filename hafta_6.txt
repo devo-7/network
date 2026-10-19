@@ -1,0 +1,12 @@
+//switch ile vlan oluşturma ve isimlendirme
+no 
+enable
+conf te
+vlan 10
+name server
+exit
+Switch#Show vlan brief
+//cihazlardaki portları vlan a bağlamak
+interface fatsethernet 0/1
+switchport mode access
+switchport access vlan 10
