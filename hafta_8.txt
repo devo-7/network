@@ -1,0 +1,309 @@
+//server ile çalışma 
+Switch>enable
+Switch#conf te
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#interfa
+Switch(config)#interface ran
+Switch(config)#interface range f0/1-3
+Switch(config-if-range)#sw
+Switch(config-if-range)#switch mod
+Switch(config-if-range)#switch mode trun
+Switch(config-if-range)#switch mode trunk 
+
+
+Switch(config-if-range)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+
+Switch(config-if-range)#exit
+Switch(config)#vtp
+% Incomplete command.
+Switch(config)#vtp
+Switch(config)#vtp ?
+  domain    Set the name of the VTP administrative domain.
+  mode      Configure VTP device mode
+  password  Set the password for the VTP administrative domain
+  version   Set the adminstrative domain to VTP version
+Switch(config)#vtp dom
+Switch(config)#vtp domain cisc
+Switch(config)#vtp domain cisco
+Changing VTP domain name from NULL to cisco
+Switch(config)#vt
+Switch(config)#vtp mod
+Switch(config)#vtp mode ser
+Switch(config)#vtp mode server 
+Device mode already VTP SERVER.
+Switch(config)#^Z
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Switch#vlan 10
+            ^
+% Invalid input detected at '^' marker.
+	
+Switch#conf te
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vlan 10
+Switch(config-vlan)#name server
+Switch(config-vlan)#^Z
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Switch#sh
+Switch#show vl
+Switch#show vlan br
+Switch#show vlan brief 
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/3, Fa0/4, Fa0/5, Fa0/6
+                                                Fa0/7, Fa0/8, Fa0/9, Fa0/10
+                                                Fa0/11, Fa0/12, Fa0/13, Fa0/14
+                                                Fa0/15, Fa0/16, Fa0/17, Fa0/18
+                                                Fa0/19, Fa0/20, Fa0/21, Fa0/22
+                                                Fa0/23, Fa0/24, Gig0/1, Gig0/2
+10   server                           active    
+1002 fddi-default                     active    
+1003 token-ring-default               active    
+1004 fddinet-default                  active    
+1005 trnet-default                    active    
+Switch#sh
+Switch#show vla
+Switch#show vlan br
+Switch#show vlan brief 
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/3, Fa0/4, Fa0/5, Fa0/6
+                                                Fa0/7, Fa0/8, Fa0/9, Fa0/10
+                                                Fa0/11, Fa0/12, Fa0/13, Fa0/14
+                                                Fa0/15, Fa0/16, Fa0/17, Fa0/18
+                                                Fa0/19, Fa0/20, Fa0/21, Fa0/22
+                                                Fa0/23, Fa0/24, Gig0/1, Gig0/2
+10   server                           active    
+1002 fddi-default                     active    
+1003 token-ring-default               active    
+1004 fddinet-default                  active    
+1005 trnet-default                    active    
+Switch#
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//transparent ile çalışma
+Switch>enab
+Switch>enable 
+Switch#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/1, changed state to up
+conf
+Switch#conf te
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#inter
+Switch(config)#interface 
+% Incomplete command.
+Switch(config)#interface ran
+Switch(config)#interface range f0/1-3
+Switch(config-if-range)#swi
+Switch(config-if-range)#switch mo
+Switch(config-if-range)#switch mode tru
+Switch(config-if-range)#switch mode trunk 
+
+
+Switch(config-if-range)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/3, changed state to up
+
+Switch(config-if-range)#
+
+
+
+
+
+
+
+
+Switch con0 is now available
+
+
+
+
+
+
+Press RETURN to get started.
+
+
+
+
+
+
+
+
+
+
+Switch>
+Switch>enab
+Switch>enable 
+Switch#show v
+Switch#show vtp status
+VTP Version capable             : 1 to 2
+VTP version running             : 1
+VTP Domain Name                 : cisco
+VTP Pruning Mode                : Disabled
+VTP Traps Generation            : Disabled
+Device ID                       : 000C.85CC.B600
+Configuration last modified by 0.0.0.0 at 0-0-00 00:00:00
+Local updater ID is 0.0.0.0 (no valid interface found)
+
+Feature VLAN : 
+--------------
+VTP Operating Mode                : Server
+Maximum VLANs supported locally   : 255
+Number of existing VLANs          : 5
+Configuration Revision            : 0
+MD5 digest                        : 0xAA 0xB9 0x0C 0xCD 0xD7 0xE8 0xA6 0xE0 
+                                    0x26 0x7A 0x04 0x1F 0xF0 0x71 0x1F 0xD5 
+
+
+Switch#conf te
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vtp
+Switch(config)#vtp mod
+Switch(config)#vtp mode tran
+Switch(config)#vtp mode transparent 
+Setting device to VTP TRANSPARENT mode.
+Switch(config)#vlan 20
+Switch(config-vlan)#name transparent
+Switch(config-vlan)#^Z
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Switch#sh
+Switch#show vla
+Switch#show vlan br
+Switch#show vlan brief 
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/4, Fa0/5, Fa0/6, Fa0/7
+                                                Fa0/8, Fa0/9, Fa0/10, Fa0/11
+                                                Fa0/12, Fa0/13, Fa0/14, Fa0/15
+                                                Fa0/16, Fa0/17, Fa0/18, Fa0/19
+                                                Fa0/20, Fa0/21, Fa0/22, Fa0/23
+                                                Fa0/24, Gig0/1, Gig0/2
+20   transparent                      active    
+1002 fddi-default                     active    
+1003 token-ring-default               active    
+1004 fddinet-default                  active    
+1005 trnet-default                    active    
+Switch#
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//client ile çalışma
+Switch>
+Switch>
+Switch>ena
+Switch>enable 
+Switch#conf te
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#inter
+Switch(config)#interface ran
+Switch(config)#interface range f0/1-3
+Switch(config-if-range)#switch mo
+Switch(config-if-range)#switch mode tr
+Switch(config-if-range)#switch mode trunk 
+
+Switch(config-if-range)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to down
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up
+
+Switch(config-if-range)#
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Switch#sh
+Switch#show vtp
+Switch#show vtp sta
+Switch#show vtp status 
+VTP Version capable             : 1 to 2
+VTP version running             : 1
+VTP Domain Name                 : cisco
+VTP Pruning Mode                : Disabled
+VTP Traps Generation            : Disabled
+Device ID                       : 0060.479C.1000
+Configuration last modified by 0.0.0.0 at 0-0-00 00:00:00
+Local updater ID is 0.0.0.0 (no valid interface found)
+
+Feature VLAN : 
+--------------
+VTP Operating Mode                : Server
+Maximum VLANs supported locally   : 255
+Number of existing VLANs          : 5
+Configuration Revision            : 0
+MD5 digest                        : 0xAA 0xB9 0x0C 0xCD 0xD7 0xE8 0xA6 0xE0 
+                                    0x26 0x7A 0x04 0x1F 0xF0 0x71 0x1F 0xD5 
+Switch#conf te
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#vtp
+Switch(config)#vtp mod
+Switch(config)#vtp mode client
+Setting device to VTP CLIENT mode.
+Switch(config)#vlan 10
+VTP VLAN configuration not allowed when device is in CLIENT mode.
+Switch(config)#name client
+                ^
+% Invalid input detected at '^' marker.
+	
+Switch(config)#^Z
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Switch#sh
+Switch#show vlan br
+Switch#show vlan brief 
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/3, Fa0/4, Fa0/5, Fa0/6
+                                                Fa0/7, Fa0/8, Fa0/9, Fa0/10
+                                                Fa0/11, Fa0/12, Fa0/13, Fa0/14
+                                                Fa0/15, Fa0/16, Fa0/17, Fa0/18
+                                                Fa0/19, Fa0/20, Fa0/21, Fa0/22
+                                                Fa0/23, Fa0/24, Gig0/1, Gig0/2
+1002 fddi-default                     active    
+1003 token-ring-default               active    
+1004 fddinet-default                  active    
+1005 trnet-default                    active    
+Switch#conf te
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#^Z
+Switch#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Switch#sh
+Switch#show vla
+Switch#show vlan br
+Switch#show vlan brief 
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/3, Fa0/4, Fa0/5, Fa0/6
+                                                Fa0/7, Fa0/8, Fa0/9, Fa0/10
+                                                Fa0/11, Fa0/12, Fa0/13, Fa0/14
+                                                Fa0/15, Fa0/16, Fa0/17, Fa0/18
+                                                Fa0/19, Fa0/20, Fa0/21, Fa0/22
+                                                Fa0/23, Fa0/24, Gig0/1, Gig0/2
+10   server                           active    
+1002 fddi-default                     active    
+1003 token-ring-default               active    
+1004 fddinet-default                  active    
+1005 trnet-default                    active    
+Switch#
